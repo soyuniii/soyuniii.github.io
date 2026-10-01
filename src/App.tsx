@@ -11,7 +11,7 @@ export default function App() {
     return () => removeEventListener('hashchange', f)
   }, [])
   const m = hash.match(/^#\/project\/(.+)$/)
-  return <div className="page" key={hash.startsWith('#/project') ? hash : 'home'}>
+  return <div className={'page'+(m?' detail-page':'')} key={hash.startsWith('#/project') ? hash : 'home'}>
     {m ? <ProjectDetail slug={m[1]} /> : <Home />}
   </div>
 }
