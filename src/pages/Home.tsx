@@ -74,17 +74,23 @@ export default function Home() {
       </Section>
 
       <Section id="experience" title="Experience">
-        {experience.map((item) => (
-          <div className="exp-item" key={`${item.company}}`}>
-            <h3 className='exp-type'>{item.type}</h3>
-            <h3 className="big">
-              {item.company}
-            </h3>
-            <p className="muted">{item.period}</p>
-            <p>{item.summary}</p>
+  <div className="exp-list">
+    {experience.map((item, i) => (
+      <Reveal key={`${item.company}-${item.period}`} delay={i * 120}>
+        <article className="exp-item">
+          <div className="exp-body">
+            <div className="exp-meta">
+              <p className="exp-type">{item.type}</p>
+              <p className="muted">{item.period}</p>
+            </div>
+            <h3 className="big">{item.company}</h3>
+            <p className="exp-sum">{item.summary}</p>
           </div>
-        ))}
-      </Section>
+        </article>
+      </Reveal>
+    ))}
+  </div>
+</Section>
 
       <Section id="skills" title="Skills">
         <dl className="skills">{skills.map(s => <div key={s.g}><dt>{s.g}</dt><dd>{s.v.join(', ')}</dd></div>)}</dl>

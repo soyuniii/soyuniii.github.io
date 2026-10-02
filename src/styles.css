@@ -598,14 +598,24 @@ h1 span {
   margin-top: 8px;
 }
 
-.exp-item{
-  padding-bottom: 40px;
-}
+/* Experience timeline */
+.exp-list{--fl:24px;--gap:22px;}
+.exp-item{position:relative;padding-bottom:42px}
+.exp-item:last-child{padding-bottom:20}
 
-.exp-type{
-  color: #E3AE2F;
-  font-weight: 500;
-}
+.exp-item::before{content:'';position:absolute;z-index:0;
+  background:linear-gradient(var(--g1),var(--g2));
+  transform:scaleY(0);transform-origin:top;transition:transform 1s cubic-bezier(.3,.7,.2,1) .5s}
+.exp-item:last-child::before{display:none}
+.exp-body{padding:2px 22px 22px;margin:-4px -22px -22px;}
+.exp-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font-size:15px}
+.exp-type{color:#B98616;font-weight:600}
+.exp-body .big{margin-top:2px}
+.exp-sum{max-width:38em;margin-top:4px;opacity:.82; font-size:16px}
+
+@media(max-width:760px){.exp-list{--fl:30px;--gap:16px}.exp-body{padding-inline:14px;margin-inline:-14px}}
+@media(prefers-reduced-motion:reduce){.exp-flower svg,.exp-item::before{transform:none!important}}
+
 
 .big {
   font-size: clamp(28px, 4vw, 30px);
