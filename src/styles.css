@@ -333,7 +333,6 @@ h1 span {
   display: inline-block;
   padding: 4px 2px 6px;
   color: var(--ink);
-  background: linear-gradient(var(--y1), var(--y1)) 0 100% / 100% 3px no-repeat;
   transition: background-size 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s ease;
 }
 
@@ -493,7 +492,7 @@ h1 span {
   position: sticky;
   top: 76px;
   align-self: start;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -597,8 +596,18 @@ h1 span {
   margin-top: 8px;
 }
 
+.exp-item{
+  padding-bottom: 40px;
+}
+
+.exp-type{
+  color: #E3AE2F;
+  font-weight: 500;
+}
+
 .big {
-  font-size: clamp(28px, 4vw, 32px);
+  font-size: clamp(28px, 4vw, 30px);
+  font-weight: 600;
 }
 
 .list {
@@ -611,6 +620,8 @@ h1 span {
 .list li::marker {
   color: var(--y1);
 }
+
+
 
 .skills {
   display: grid;
@@ -628,6 +639,69 @@ h1 span {
 
 .skills dt {
   font-weight: 700;
+}
+
+/* Awards / Certificate / Education */
+
+.info-grid > #edu-sec {
+  grid-column: 1 / -1;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-item,
+.edu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.info-item:first-child,
+.educ-item:first-child {
+  padding-top: 4px;
+}
+
+
+.info-item strong,
+.edu-item strong {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.info-item span,
+.edu-item span {
+  flex-shrink: 0;
+  color: var(--mut);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .info-grid > #edu-sec {
+    grid-column: auto;
+  }
+
+  .info-item,
+  .edu-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
 .contact {
@@ -649,7 +723,8 @@ h1 span {
 }
 
 .mail {
-  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 500;
+  font-size: clamp(18px, 3vw, 20px);
   display: inline-block;
 }
 
@@ -670,6 +745,7 @@ h1 span {
 
 .back {
   color: var(--mut);
+  font-size: 30px;
 }
 
 .back:hover {
@@ -678,6 +754,17 @@ h1 span {
 
 .detail h1 {
   margin: 28px 0 12px;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.store-link {
+  display: flex;
+  gap: 30px;
 }
 
 .meta {
@@ -911,25 +998,24 @@ h1 span {
 
 .car-btn{
   position: absolute;
-  top: 50%; /* 이 부분이 빠져있으면 자바스크립트 인라인 스타일에 의존하게 됩니다 */
+  top: 50%;
   transform: translateY(-50%);
-  width: 46px;
-  height: 46px;
-  min-width: 46px;
-  min-height: 46px;
+  width: 46px; height: 46px;
+  min-width: 46px; min-height: 46px;
   padding: 0;
   box-sizing: border-box;
   border-radius: 50%;
   display: grid;
-  place-items:center;
+  place-items: center;
   background: rgba(255,249,236,.85);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 24px -10px rgba(37,53,42,.55);
   transition: opacity .3s, transform .3s, background .2s;
-  z-index: 2; /* 버튼이 이미지 위에 확실히 보이도록 처리 */
+  z-index: 2;
 }
 .car-btn:hover{background:#fff;transform:translateY(-50%) scale(1.06)}
-.car-btn.next{right:-14px}.car-btn.prev{left:-14px}
+.car-btn.car-next{right:-14px}
+.car-btn.car-prev{left:-14px}
 .car-btn.off{opacity:0;pointer-events:none}
 
 @media(max-width:900px){.slide{flex-basis:calc((100% - 20px) / 2.2)}}

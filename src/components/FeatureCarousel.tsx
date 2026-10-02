@@ -48,13 +48,15 @@ export default function FeatureCarousel({ items }: { items: Feature[] }) {
         <figcaption><h3>{f.name}</h3><p>{f.desc}</p></figcaption>
       </figure>)}
     </div>
-    {(['prev', 'next'] as const).map(k => {
-      const hidden = k === 'prev' ? edge.start : edge.end
-      return <button key={k} className={'car-btn ' + k + (hidden ? ' off' : '')} onClick={() => move(k === 'next' ? 1 : -1)} aria-label={k === 'next' ? '다음 화면' : '이전 화면'} tabIndex={hidden ? -1 : 0}>
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <path d={k === 'next' ? 'M9 5l7 7-7 7' : 'M15 5l-7 7 7 7'} />
-        </svg>
-      </button>
-    })}
+{(['prev', 'next'] as const).map(k => {
+  const hidden = k === 'prev' ? edge.start : edge.end
+  return <button key={k} className={`car-btn car-${k}` + (hidden ? ' off' : '')}
+    onClick={() => move(k === 'next' ? 1 : -1)}
+    aria-label={k === 'next' ? '다음 화면' : '이전 화면'} tabIndex={hidden ? -1 : 0}>
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d={k === 'next' ? 'M9 5l7 7-7 7' : 'M15 5l-7 7 7 7'} />
+    </svg>
+  </button>
+})}
   </div>
 }
