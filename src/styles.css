@@ -197,19 +197,20 @@ h3 {
   z-index: 6;
   display: grid;
   grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(36px, 5vw, 76px);
+  gap: clamp(36px, 5vw, 36px);
   align-items: center;
   min-height: 100svh;
-  padding: 80px max(var(--pad), calc((100vw - var(--content-max)) / 2)) 17vh;
+  padding: 60px max(var(--pad), calc((100vw - var(--content-max)) / 2)) 17vh;
 }
 
 .hero-side-left {
 position: relative;
 z-index: 8;
 align-self: center;
+justify-self: flex-end;
 display: flex;
 flex-direction: column;
-gap: 18px;
+gap: 28px;
 min-width: 0;
 padding-bottom: 4vh;
 color: var(–ink);
@@ -219,7 +220,7 @@ color: var(–ink);
 display: grid;
 grid-template-columns: auto 1fr;
 align-items: center;
-column-gap: clamp(22px, 3vw, 36px);
+column-gap: clamp(22px, 3vw, 66px);
 }
 
 .hero-meta {
@@ -239,7 +240,6 @@ font-weight: 500;
 
 .hero-meta .role {
 display: block;
-margin: 0;
 color: var(–mut);
 font-size: 20px;
 }
@@ -261,7 +261,7 @@ margin: 0;
 display: flex;
 gap: 24px;
 flex-wrap: wrap;
-margin-top: 16px;
+margin-top: 8px;
 }
 
 .hero-text {
@@ -281,7 +281,7 @@ margin-top: 16px;
 h1 {
   font-size: var(--h1-size);
   line-height: 1.38;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h1 span {
@@ -298,7 +298,7 @@ h1 span {
 
 .lead {
   max-width: 32em;
-  font-size: clamp(16px, 1.6vw, 19px);
+  font-size: clamp(16px, 1.6vw, 17px);
   color: var(--mut);
   margin-top: 22px;
 }
@@ -362,7 +362,7 @@ h1 span {
 .photo {
   position: relative;
   z-index: 1;
-  width: clamp(190px, 22vw, 220px);
+  width: clamp(190px, 22vw, 200px);
   aspect-ratio: 1 / 1;
   flex: 0 0 auto;
   overflow: visible; /* 링이 바깥으로 자연스럽게 노출되도록 설정 */
@@ -428,12 +428,12 @@ h1 span {
   left: 0;
   width: 100%;
   bottom: 0;
-  height: min(28vh, 260px);
+  height: min(28vh, 230px);
 }
 
 .hill.back {
   z-index: 1;
-  height: min(40vh, 360px);
+  height: min(40vh, 310px);
 }
 
 .hill.front {
@@ -449,7 +449,7 @@ h1 span {
 
 .hero-flowers {
   z-index: 2;
-  bottom: calc(min(28vh, 260px) - 86px);
+  bottom: calc(min(28vh, 260px) - 126px);
   height: 130px;
 }
 
@@ -522,6 +522,7 @@ h1 span {
 .strengths p {
   color: var(--ink);
   opacity: 0.78;
+  font-size: 15px;
 }
 
 .works {
@@ -583,6 +584,7 @@ h1 span {
   color: var(--mut);
   max-width: 40em;
   margin-top: 6px;
+  font-size: 15px
 }
 
 .works .w-role {
@@ -977,7 +979,6 @@ h1 span {
 .feat-sec{margin:48px 0 40px}.feat-sec h2{font-size:22px;margin-bottom:20px}
 .carousel{position:relative}
 
-/* 1. 좌우 패딩(padding) 및 여백(margin) 제거 */
 .track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;padding:0;margin:0;border-radius:12px}
 .track::-webkit-scrollbar{display:none}
 
@@ -985,13 +986,13 @@ h1 span {
 .slide .shot{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s;box-shadow:0 14px 30px -22px rgba(37,53,42,.55)}
 .slide:hover .shot{transform:translateY(-4px);box-shadow:0 22px 38px -22px rgba(37,53,42,.6)}
 
-/* 2. 이미지가 상하로 더 안 보이게(꽉 차게) 처리 */
 .slide .shot img,
 .slide img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   width: 100%;
   height: 100%;
+  background-color: white;
 }
 
 .slide figcaption{padding:28px 4px 0}.slide h3{font-size:20px;line-height:1.35}.slide p{color:var(--mut);font-size:15px;margin-top:4px}

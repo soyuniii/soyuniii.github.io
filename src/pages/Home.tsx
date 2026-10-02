@@ -30,6 +30,10 @@ export default function Home() {
         <Flowers className="hero-flowers" count={46} seed={3} />
 
         <div className="hero-inner">
+          <div className="hero-text">
+            <h1>{profile.headline.map((l, i) => <span key={i} style={{ animationDelay: 150 + i * 140 + 'ms' }}>{l}</span>)}</h1>
+            <p className="lead">{profile.intro}</p>
+          </div>
   <div className="hero-side hero-side-left">
     <div className="hero-top">
       <div className="photo">
@@ -49,10 +53,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-text">
-            <h1>{profile.headline.map((l, i) => <span key={i} style={{ animationDelay: 150 + i * 140 + 'ms' }}>{l}</span>)}</h1>
-            <p className="lead">{profile.intro}</p>
-          </div>
+          
         </div>
         <svg className="hill front" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true"><path fill="#B7C98A" d="M0 130C260 80 520 150 800 120S1240 70 1440 110V240H0Z" /></svg>
       </section>
