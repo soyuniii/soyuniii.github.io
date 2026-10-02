@@ -81,11 +81,6 @@ export default function Home() {
             </h3>
             <p className="muted">{item.period}</p>
             <p>{item.summary}</p>
-            <ul className="list">
-              {item.points.map((x) => (
-                <li key={x}>{x}</li>
-              ))}
-            </ul>
           </div>
         ))}
       </Section>
@@ -129,7 +124,7 @@ export default function Home() {
       <section id="contact" className="contact">
         <Flowers className="contact-flowers" count={38} seed={9} />
         <Reveal><div className="contact-in">
-          <h3>함께 만들어 보고 싶으시다면</h3>
+          <h3>새로운 서비스를 함께 만들어가고 싶습니다</h3>
           <a className="mail" href={'mailto:' + profile.email}>{profile.email}</a>
         </div></Reveal>
       </section>
