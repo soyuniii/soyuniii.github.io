@@ -62,7 +62,7 @@ export default function Home() {
         <div className="strengths">{strengths.map(s => <div key={s.t}><h3>{s.t}</h3><p>{s.d}</p></div>)}</div>
       </Section>
 
-      <Section id="work" title="Project">
+      <Section id="project" title="Project">
   <ul className="works">{projects.map(p => <li key={p.slug}>
     <a href={'#/project/' + p.slug}>
       <span className="app-icon" aria-hidden="true">
