@@ -21,7 +21,7 @@ export const strengths = [
 
 export type Project = {
   slug: string; title: string; oneLiner: string; period: string; stack: string[]; role: string
-  team: string; github?: string; app_link?: string; play_link?: string;
+  team: string; github?: string; app_link?: string; play_link?: string; icon?: string;
   overview?: string; problem?: string; role_list?: string[]; uxui?: string[]; development?: string[]
   features?: { name: string; desc: string; image?: string }[]
   challenges?: { title: string; body: string }[]; result?: string; learned?: string; havetodo?: string;
@@ -31,6 +31,7 @@ export const projects: Project[] = [
   {
     slug: 'donguldongul', title: '돈글돈글', period: '2026.03 – 진행 중',
     oneLiner: '금융 뉴스를 카드뉴스로 쉽게 배우고 학습하는 청년 금융 AI 플랫폼',
+    icon: '/images/dongle/dongle-logo.png',
     stack: ['React Native', 'TypeScript'], role: '기획 총괄 · UX/UI 디자인 · 프론트엔드 개발', team: 'FE 1 / BE 1 / AI 1',
     features: [
       { name: 'OAuth 로그인', desc: '카카오 / 네이버(개발 예정) 소셜 로그인', image:'/images/dongle/1.png' },
@@ -61,6 +62,7 @@ export const projects: Project[] = [
     oneLiner: 'AI 기반 여행 콘텐츠 플랫폼 모바일 앱',
     stack: ['React Native','Expo', 'TypeScript','Tanstack Query',' Justand', 'Supabase'],
     role: '크로스 플랫폼 앱 개발 및 운영', team: 'App (2)',
+    icon: '/images/trit/trit-logo.png',
     app_link: 'https://apps.apple.com/kr/app/trit-korea-travel-platform/id6754618596',
     play_link: 'https://play.google.com/store/apps/details?id=com.todaysquare.trit&hl=ko',
     features: [
@@ -106,6 +108,7 @@ export const projects: Project[] = [
     oneLiner: '타지에서 고향 음식을 찾는 사람들을 위한 음식점 추천 및 실시간 소통 앱',
     stack: ['React Native', 'react-native-maps', 'WebSocket', 'Axios'],
     role: '기획 총괄 · UX/UI 디자인 · 프론트엔드 개발', team: 'FE 1 / BE 2',
+    icon: '/images/nomad/nomad-logo.png',
     github: 'https://github.com/soyuniii/nomad',
     features: [
       { name: '회원가입 및 로그인', desc: '세션 기반 인증을 진행합니다.', image:'/images/nomad/1.png' },

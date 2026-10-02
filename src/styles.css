@@ -525,78 +525,33 @@ h1 span {
   font-size: 15px;
 }
 
-.works {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 6px;
-}
+.works{list-style:none;padding:0;display:grid;gap:6px}
+.works a{position:relative;display:flex;align-items:flex-start;gap:32px;padding:24px 28px;margin:0 -28px;border-radius:28px;
+  transition:background .35s,transform .35s,box-shadow .35s}
+.works a:hover,.works a:focus-visible{background:rgba(255, 255, 255, 0.24);transform:translateY(-4px);box-shadow:0 18px 34px -22px rgba(37,53,42,.5)}
 
-.works a {
-  position: relative;
-  display: block;
-  padding: 28px;
-  margin: 0 -28px;
-  border-radius: 28px;
-  transition: background 0.35s, transform 0.35s, box-shadow 0.35s;
-}
+.app-icon{--ic:110px;position:relative;flex:none;width:var(--ic);height:var(--ic);border-radius:22%;overflow:hidden;
+  background:linear-gradient(145deg,var(--y2),var(--g2));
+  box-shadow:0 0 0 1px rgba(37,53,42,.08),0 8px 18px -10px rgba(37,53,42,.5);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.app-icon img{display:block;width:100%;height:100%;object-fit:cover}
+.app-icon b{display:grid;place-items:center;width:100%;height:100%;font:700 calc(var(--ic) * .42) 'Gowun Batang',serif;color:rgba(37,53,42,.75)}
 
-.works a:hover,
-.works a:focus-visible {
-  background: rgba(247, 214, 106, 0.24);
-  transform: translateY(-4px);
-  box-shadow: 0 18px 34px -22px rgba(37, 53, 42, 0.5);
-}
+.app-icon::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.7) 50%,transparent 65%);transform:translateX(-130%)}
+.works a:hover .app-icon,.works a:focus-visible .app-icon{transform:scale(1.06);
+  box-shadow:0 0 0 1px rgba(37,53,42,.08),0 0 0 6px rgba(247,214,106,.35),0 14px 30px -8px rgba(243,201,78,.85)}
+.works a:hover .app-icon::after,.works a:focus-visible .app-icon::after{transform:translateX(130%);transition:transform .8s ease}
 
-.works a::after {
-  content: '';
-  position: absolute;
-  right: 28px;
-  top: 30px;
-  width: 30px;
-  height: 30px;
-  background: radial-gradient(circle, #E3AE2F 20%, var(--y1) 23% 62%, transparent 65%);
-  opacity: 0;
-  transform: scale(0.4) rotate(-40deg);
-  transition: 0.4s;
-}
+.w-info{min-width:0;flex:1}
+.w-head{display:flex;justify-content:space-between;gap:4px 16px;align-items:baseline;flex-wrap:wrap}
+.w-head h3{font-size:clamp(26px,4vw,32px);line-height:1.25}
+.works p{color:var(--mut);max-width:40em;margin-top:6px;font-size:15px}
+.works .w-role{color:var(--ink);font-weight:600}
+.w-stack{font-size:14px;color:var(--mut);margin-top:8px}
 
-.works a:hover::after {
-  opacity: 1;
-  transform: none;
-}
-
-.w-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  align-items: baseline;
-  flex-wrap: wrap;
-  padding-right: 40px;
-}
-
-.w-head h3 {
-  font-size: clamp(30px, 4.4vw, 32px);
-  line-height: 1.25;
-}
-
-.works p {
-  color: var(--mut);
-  max-width: 40em;
-  margin-top: 6px;
-  font-size: 15px
-}
-
-.works .w-role {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.w-stack {
-  font-size: 14px;
-  color: var(--mut);
-  margin-top: 8px;
-}
+@media(max-width:560px){.works a{gap:14px;padding:20px 16px;margin:0 -16px}.app-icon{--ic:64px}}
+@media(prefers-reduced-motion:reduce){.app-icon::after{display:none}.works a:hover .app-icon{transform:none}}
 
 /* Experience timeline */
 .exp-list{--fl:24px;--gap:22px;}

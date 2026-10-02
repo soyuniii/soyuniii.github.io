@@ -62,16 +62,21 @@ export default function Home() {
         <div className="strengths">{strengths.map(s => <div key={s.t}><h3>{s.t}</h3><p>{s.d}</p></div>)}</div>
       </Section>
 
-      <Section id="project" title="Project">
-        <ul className="works">{projects.map(p => <li key={p.slug}>
-          <a href={'#/project/' + p.slug}>
-            <div className="w-head"><h3 className="big">{p.title}</h3><span className="muted">{p.period}</span></div>
-            <p>{p.oneLiner}</p>
-            <p className="w-role">{p.role}</p>
-            <div className="w-stack">{p.stack.join(' / ')}</div>
-          </a>
-        </li>)}</ul>
-      </Section>
+      <Section id="work" title="Project">
+  <ul className="works">{projects.map(p => <li key={p.slug}>
+    <a href={'#/project/' + p.slug}>
+      <span className="app-icon" aria-hidden="true">
+        {p.icon ? <img src={p.icon} alt="" loading="lazy" /> : <b>{p.title[0]}</b>}
+      </span>
+      <div className="w-info">
+        <div className="w-head"><h3 className="big">{p.title}</h3><span className="muted">{p.period}</span></div>
+        <p>{p.oneLiner}</p>
+        <p className="w-role">{p.role}</p>
+        <div className="w-stack">{p.stack.join(' / ')}</div>
+      </div>
+    </a>
+  </li>)}</ul>
+</Section>
 
       <Section id="experience" title="Experience">
   <div className="exp-list">
