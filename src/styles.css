@@ -981,7 +981,7 @@ h1 span {
 .track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;padding:0;margin:0;border-radius:12px}
 .track::-webkit-scrollbar{display:none}
 
-.slide{flex:0 0 calc((100% - 40px) / 3);scroll-snap-align:start;scroll-snap-stop:always}
+.slide{flex:0 0 calc((100% - 40px) / 3);scroll-snap-align:start;}
 .slide .shot{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s;box-shadow:0 14px 30px -22px rgba(37,53,42,.55)}
 .slide:hover .shot{transform:translateY(-4px);box-shadow:0 22px 38px -22px rgba(37,53,42,.6)}
 

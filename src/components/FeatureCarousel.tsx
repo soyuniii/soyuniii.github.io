@@ -28,15 +28,15 @@ export default function FeatureCarousel({ items }: { items: Feature[] }) {
     return () => ro.disconnect()
   }, [update, items])
 
-  // 한 번에 "보이는 개수만큼" 넘깁니다 (App Store와 동일)
+  const PAGE = 3 // 화살표 한 번에 넘길 칸 수
+
   const move = (dir: 1 | -1) => {
-    const t = track.current
-    if (!t) return
-    const s = t.querySelectorAll<HTMLElement>('.slide')
-    const step = s.length > 1 ? s[1].offsetLeft - s[0].offsetLeft : t.clientWidth
-    const visible = Math.max(1, Math.round(t.clientWidth / step))
-    t.scrollBy({ left: dir * step * visible, behavior: reduced() ? 'auto' : 'smooth' })
-  }
+  const t = track.current
+  if (!t) return
+  const s = t.querySelectorAll<HTMLElement>('.slide')
+  const step = s.length > 1 ? s[1].offsetLeft - s[0].offsetLeft : t.clientWidth
+  t.scrollBy({ left: dir * step * PAGE, behavior: reduced() ? 'auto' : 'smooth' })
+}
 
   return <div className="carousel" role="region" aria-roledescription="carousel" aria-label="주요 기능 화면">
     <div
