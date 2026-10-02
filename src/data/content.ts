@@ -32,6 +32,7 @@ export const projects: Project[] = [
     slug: 'donguldongul', title: '돈글돈글', period: '2026.03 – 진행 중',
     oneLiner: '금융 뉴스를 카드뉴스로 쉽게 배우고 학습하는 청년 금융 AI 플랫폼',
     icon: '/images/dongle/dongle-logo.png',
+    github: 'https://github.com/Dongle-2026/Dongle-APP',
     stack: ['React Native', 'TypeScript'], role: '기획 총괄 · UX/UI 디자인 · 프론트엔드 개발', team: 'FE 1 / BE 1 / AI 1',
     features: [
       { name: 'OAuth 로그인', desc: '카카오 / 네이버(개발 예정) 소셜 로그인', image:'/images/dongle/1.png' },
