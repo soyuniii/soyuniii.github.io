@@ -110,7 +110,7 @@ export const projects: Project[] = [
     stack: ['React Native', 'react-native-maps', 'WebSocket', 'Axios'],
     role: '기획 총괄 · UX/UI 디자인 · 프론트엔드 개발', team: 'FE 1 / BE 2',
     icon: '/images/nomad/nomad-logo.png',
-    github: 'https://github.com/soyuniii/nomad',
+    github: 'https://github.com/soyuniii/nomad-front',
     features: [
       { name: '회원가입 및 로그인', desc: '세션 기반 인증을 진행합니다.', image:'/images/nomad/1.png' },
       { name: '사용자 위치 기반 음식점 추천', desc: 'react-native-maps와 geolocation API로 반경 5km 내 자국 음식점 마커를 표시합니다.', image:'/images/nomad/2.png' },
